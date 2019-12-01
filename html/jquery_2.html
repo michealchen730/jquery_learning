@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JQuery入口函数的其他写法</title>
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+    <script>
+        //1、第一种写法
+        $(document).ready(function () {
+            alert("第一种写法");
+        });
+        //2、第二种写法
+        jQuery(document).ready(function () {
+            alert("第二种写法");
+        });
+        //3、第三种写法（推荐写法）
+        $(function () {
+            alert("第三种写法");
+        });
+        //4、第四种写法
+        jQuery(function () {
+            alert("第四种写法");
+        });
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

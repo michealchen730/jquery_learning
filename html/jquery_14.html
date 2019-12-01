@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jquery的attr方法</title>
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            /**
+             * 1、attr(name|pro|key,bal|fun)
+             * 作用：获取或者设置属性节点的值
+             * 可以传递一个参数，也可以传递两个参数
+             * 如果传递一个参数，代表获取属性节点的值
+             * 如果传递两个参数，代表设置属性节点的值
+             * 注意点：
+             * 如果是获取：无论找到多少个元素，都只会返回第一个元素指定的属性节点的值
+             * 如果是设置：找到多少个元素，就会设置多少个元素
+             * 如果是设置：如果设置的属性节点不存在，那么系统会自动新增
+             *
+             * 2、removeAttr(name)
+             * 作用：删除属性节点
+             *
+             * 注意点：
+             * 会删除所有找到元素的属性节点
+             * $("span").removeAttr("class name");
+             * 如果想要删除多个属性节点，空格隔开即可
+             */
+
+            console.log($("span").attr("class"));
+            console.log($("span").attr("class","box"));
+            $("span").attr("abc","123");
+            $("span").removeAttr("class name");
+        });
+    </script>
+</head>
+<body>
+<span name="it666" class="span1"></span>
+<span name="lng" class="span2"></span>
+</body>
+</html>

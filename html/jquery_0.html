@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            width: 100px;
+            height: 100px;
+            border: 1px solid #000;
+        }
+    </style>
+    <script>
+        window.onload=function (ev) {
+            //1、利用原生js查找dom元素
+            var div1=document.getElementsByTagName("div")[0];
+            var div2=document.getElementsByClassName("box1")[0];
+            var div3=document.getElementById("box2");
+            //console.log(div1,div2,div3)
+            //2、利用原生js修改背景颜色
+            // div1.style.backgroundColor="red";
+            // div2.style.backgroundColor="yellow";
+            // div3.style.backgroundColor="green";
+
+        }
+
+        $(function () {
+            var $div1=$("div");
+            var $div2=$(".box1");
+            var $div3=$("#box2");
+            //console.log($div1,$div2,$div3);
+            $div1.css({
+                background:"black",
+                width:"150px"
+            });
+            $div2.css({
+                background:"blue"
+            });
+            $div3.css({
+                background:"yellow"
+            });
+
+        })
+
+    </script>
+</head>
+<body>
+<div></div>
+<div class="box1"></div>
+<div id="box2"></div>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>静态方法holdReady方法</title>
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+    <script>
+        //$.holdReady(true);作用：暂停ready的执行
+        $.holdReady(true);
+        $(document).ready(function () {
+            alert("ready");
+        });
+    </script>
+</head>
+<body>
+<button>回复ready事件</button>
+<script>
+    var btn_1=document.getElementsByTagName("button")[0];
+    btn_1.onclick=function () {
+        $.holdReady(false);
+    };
+</script>
+</body>
+</html>

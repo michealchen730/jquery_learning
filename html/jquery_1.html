@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jquery_1</title>
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+    <script>
+        //1、原生js的固定写法
+        window.onload=function(ev){
+            //1、通过原生js拿到DOM元素
+            var img=document.getElementsByTagName("img")[0];
+            console.log(img);
+            //2、通过原生js拿到DOM元素的宽高
+            var width=window.getComputedStyle(img).width;
+            console.log(width);
+        };
+        //2、jQuery的固定写法
+        $(document).ready(function () {
+            //1、通过jQuery拿到DOM元素
+            var $img=$("img");
+            console.log($img);
+            //2、
+            var $width=$img.width();
+            console.log($width);
+        })
+    </script>
+</head>
+<body>
+<img src="https://ossgw.alicdn.com/alp/1572809375526-200-76.png">
+</body>
+</html>
