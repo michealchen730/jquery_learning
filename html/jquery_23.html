@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jquery事件移除</title>
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+
+            function test1() {
+                alert("hello,moto");
+            }
+            function test2(){
+                alert("hello,motolola");
+            }
+
+            $("button").click(test1);
+            $("button").click(test2);
+            $("button").mouseleave(function () {
+                alert("hello,mouseleave");
+            });
+            $("button").mouseenter(function () {
+                alert("hello,mouseenter");
+            })
+
+            /**
+             * 不传参会移除所有事件
+             * 传递一个参数 会移除所有指定类型的事件
+             * 传递两个参数，会移除指定类型的指定事件
+             */
+            //$("button").off("click");
+            $("button").off("click",test1);
+
+        });
+    </script>
+</head>
+<body>
+<button>我是按钮</button>
+</body>
+</html>

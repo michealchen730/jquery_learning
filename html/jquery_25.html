@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jquery事件自动触发</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .father{
+            width: 200px;
+            height: 200px;
+            background: red;
+        }
+        .son{
+            width: 100px;
+            height: 100px;
+            background: blue;
+        }
+    </style>
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            /**
+             * 1、什么是事件冒泡
+             *
+             * 2、如何阻止事件冒泡
+             * (1)return false;
+             * (2)event.stopPropagation();
+             *
+             * 3、什么是默认行为
+             * 4、如何阻止默认行为
+             * (1)return false;
+             * (2)event.preventDefault();
+             */
+            $(".son").click(function (event) {
+                alert("son");
+            });
+            $(".father").click(function () {
+                alert("father");
+            });
+            //$(".father").trigger("click");
+            //$(".father").triggerHandler("click");
+            /**
+             * trigger:如果你用trigger自动触发事件，会触发事件冒泡
+             * triggerHandler:如果你用triggerHandler自动触发事件，不会触发事件冒泡
+             */
+            //$(".son").trigger("click");
+            //$(".son").triggerHandler("click");
+
+            $("input[type='submit']").click(function () {
+                alert("submit");
+            });
+            /**
+             * trigger:如果利用trigger自动触发事件，会触发默认行为(a标签时不会触发，可以在a内新增span标签)
+             * triggerHandler:如果利用triggerHandler自动触发事件，不会触发默认行为
+             */
+            // $("input[type='submit']").trigger("click");
+            // $("input[type='submit']").triggerHandler("click");
+
+
+            // $("a").click(function () {
+            //     alert("click");
+            // });
+            //$("a").triggerHandler("click");
+            $("a").trigger("click");
+        });
+    </script>
+</head>
+<body>
+<div class="father">
+    <div class="son"></div>
+</div>
+<a href="http://www.baidu.com">我是百度</a>
+<form action="http://www.taobao.com">
+    <input type="text">
+    <input type="submit">
+</form>
+</body>
+</html>
